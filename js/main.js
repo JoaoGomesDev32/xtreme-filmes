@@ -53,3 +53,15 @@ var swiper = new Swiper(".popular-content", {
     // Pausa ao fechar o Video
     myvideo.pause();
   };
+  const addToFavorites = (movieId) => {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (!favorites.includes(movieId)) {
+        favorites.push(movieId);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert('Adicionado aos Favoritos!');
+    }
+};
+fetch('https://api.themoviedb.org/3/movie/popular?api_key=SUA_API_KEY')
+    .then(response => response.json())
+    .then(data => console.log(data.results));
+

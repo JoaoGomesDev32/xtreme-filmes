@@ -463,6 +463,10 @@ header{
 .download-links a:hover{
     background: var(--hover-color);
 }
+.movie-box:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
 /* Resposividade */
 @media (max-width: 1170px) {
     .navbar{
